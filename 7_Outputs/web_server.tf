@@ -25,7 +25,7 @@ resource "aws_instance" "my_webserver" {
     })
 
     tags = {
-      Name  = "Web-server Build by Terraform"
+      Name  = "Web-server test test"
       Owner = "Alexey"
     }
     

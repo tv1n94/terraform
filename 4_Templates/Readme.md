@@ -9,3 +9,7 @@
 Вывод файла без изменений: `file(“user_data.sh.tpl”)`
 
 Вывод файла с изменениями: `templatefile("user_data.sh.tpl", {f_name = "Alexey", names = [""Vasya", "John", "Kate", "Sasha""] })`
+
+**Доступ по SSH**
+
+В данном примере реализован доступ к хосту по SSH. Для подключения потребуется ввести команду `ssh ec2-user@<ip-адрес хоста>`
