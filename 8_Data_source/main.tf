@@ -1,4 +1,6 @@
-provider "aws" {}
+provider "aws" {
+    region = "eu-central-1"
+}
 
 #Get availability zones from AWS
 data "aws_availability_zones" "working" {}
@@ -18,6 +20,35 @@ data "aws_vpc" "prod" {
        Name = "prod"
    }
 }
+
+#Get latest AMI id for Ubuntu 20 
+data "aws_ami" "latest_ubuntu" {
+    owners = ["099720109477"]
+    #Always use only last version image
+    most_recent = true
+    filter {
+        name = "name"
+        values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+    }
+}
+
+#Output latest ubuntu 20 id
+output "latest_ubuntu_ami_id" {
+    value = data.aws_ami.latest_ubuntu.id
+}
+
+#Output latest ubuntu 20 name
+output "latest_ubuntu_ami_name" {
+    value = data.aws_ami.latest_ubuntu.name
+}
+
+#We can use this value for create instance
+resource "aws_instance" "my_webserver" {
+    #Image ID. We can see ID in AWS
+    ami                    = data.aws_ami.latest_ubuntu.id
+    instance_type          = "t3.micro"
+}
+
 
 #Create subnet 1 in use VPC ID
 resource "aws_subnet" "prod_subnet_1" {
