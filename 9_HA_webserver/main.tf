@@ -48,7 +48,7 @@ resource "aws_security_group" "web" {
 #Add ssh-key
 resource "aws_key_pair" "ssh-key" {
   key_name   = "ssh-key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuVan7mXtybbz2JDmQiA99bvz6h0G9CkDkpj5jSFqw0htecv1eX4GWyeAciLmEdcqPPXUAR/fiMJkrzvVm1cHBz6wWzjEUElVXrYO1ubsG4G/5QU6YUH1F3e8zX3Y8Fmz6S5WD/kyl7TAbwTo0cJiAwKgpIt2J06sGY4j5zmogsR5sEsIfKeQy48ZoB6spoBjmuq64TwGYgDQ3SXLUBT2st8L0XjGfTdi31g3rkKfzPNi9/WdvxhiIc9AaHKxOJuT4GalGGJtMaEpaUmJanWzNhR411KrDtm21dn3QiST9/5W/ydwNRG71XAQ0xNVbRTRWtxzD+LVrr/6RMUe42Z5nJsNWj5HTQX7Vx3t6Jf8HwwJ7bvQOVSu/d9u1LdjPEh20ieLB3+A/5VUCZUeHtvt9Dl2zSEKZrJxGV5Na0AhAQZ5WvRsGECN91eUHZA/qRMZNaWLsJpplMYwG2C2IdTY9vL8CcX1B1Ntax6qwzhudbTOvh1MpFx4JnAD+MENHFhc= alex@alex-pc"
+  public_key = "YOUR PUBLIC SSH_KEY"
 }
 
 #Add aws launch configuration
